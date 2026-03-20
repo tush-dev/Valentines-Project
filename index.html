@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ask-her-out</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+
+    <div id = "valentineQsn" >Will you be my Valentine ? </div>
+
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+       
+    <button class="answerButtoN" onclick="location.href='thankyou.html'">YES</button>
+    <button class="answerButtoN" id="noBtn">NO , MAYBE NEXT TIME</button>
+    </div>
+
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+<img src="assets/please.png" alt="please emoji" class="responsive" >
+</div>
+
+<script>
+      let scaleAmount = 1;
+      const fahSound = new Audio('assets/fahhhhh.mp3');
+      
+      document
+        .getElementById("noBtn")
+        .addEventListener("click", function () {
+          fahSound.currentTime = 0;
+          fahSound.play();
+          
+          var yesButton = document.querySelector(
+            'button[onclick*="thankyou.html"]'
+          );
+          scaleAmount += 0.1;
+          yesButton.style.transform = "scale(" + scaleAmount + ")";
+        });
+    </script>
+
+
+</body>
+</html>
